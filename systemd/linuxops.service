@@ -1,0 +1,16 @@
+[Unit]
+Description=Linux Production Platform
+After=network.target
+
+[Service]
+Type=simple
+User=suraj_barla
+Group=suraj_barla
+WorkingDirectory=/home/suraj_barla/linux-production-platform/app
+ExecStart=/home/suraj_barla/linux-production-platform/app/.venv/bin/python /home/suraj_barla/linux-production-platform/app/app.py
+Restart=on-failure
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
